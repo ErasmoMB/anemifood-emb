@@ -11,13 +11,12 @@ import CartProvider from "./Cart";
 
 // Accede a la variable de entorno REACT_APP_BACKEND_URL
 const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
+const frontendURL =
+  process.env.REACT_APP_FRONTEND_URL || "http://localhost:3000";
+const successURL = `${frontendURL}/success`;
+const cancelURL = `${frontendURL}/cancel`;
 
 function App() {
-  const successURL =
-    process.env.REACT_APP_SUCCESS_URL || "http://localhost:3000/success";
-  const cancelURL =
-    process.env.REACT_APP_CANCEL_URL || "http://localhost:3000/cancel";
-
   return (
     <div>
       <CartProvider>
