@@ -10,7 +10,7 @@ import Cancel from "./pages/Cancel";
 import CartProvider from "./Cart";
 
 // Accede a la variable de entorno REACT_APP_BACKEND_URL
-const backendURL = process.env.REACT_BACKEND_URL || "http://localhost:4000";
+const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
 
 function App() {
   return (
