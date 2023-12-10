@@ -11,21 +11,31 @@ import CartProvider from "./Cart";
 
 // Accede a la variable de entorno REACT_APP_BACKEND_URL
 const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
-
+const successURL = `${process.env.REACT_APP_FRONTEND_URL}/success`;
+const cancelURL = `${process.env.REACT_APP_FRONTEND_URL}/cancel`;
 function App() {
-  console.log(window.location.pathname);
   return (
     <div>
       <CartProvider>
         {/* Pasa la variable de entorno a Navbar */}
-        <Navbar backendURL={backendURL} />
+        <Navbar
+          backendURL={backendURL}
+          successURL={successURL}
+          cancelURL={cancelURL}
+        />
         <div className="container">
           <BrowserRouter>
             <Routes>
               {/* Pasa la variable de entorno a Store */}
               <Route path="/" element={<Store backendURL={backendURL} />} />
-              <Route path="/success" element={<Success />} />
-              <Route path="/cancel" element={<Cancel />} />
+              <Route
+                path="/success"
+                element={<Success successURL={successURL} />}
+              />
+              <Route
+                path="/cancel"
+                element={<Cancel cancelURL={cancelURL} />}
+              />
             </Routes>
           </BrowserRouter>
         </div>
