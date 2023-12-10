@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
+const { FRONTEND_URL } = require("./config.js");
 
 function Navbar() {
   const cart = useContext(Cart);
@@ -10,7 +11,7 @@ function Navbar() {
   );
 
   const checkout = async () => {
-    await fetch("http://localhost:4000/checkout", {
+    const response = await fetch(`${FRONTEND_URL}/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
