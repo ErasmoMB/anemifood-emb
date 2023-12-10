@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
-const { FRONTEND_URL } = require("./config.js");
 
 function Navbar() {
   const cart = useContext(Cart);
@@ -11,23 +10,31 @@ function Navbar() {
   );
 
   const checkout = async () => {
-    const response = await fetch(`${FRONTEND_URL}/checkout`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ items: cart.items }),
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((response) => {
-        console.log(response.url);
-        if (response.url) {
-          window.location.assign(response.url);
-        }
-      });
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/checkout`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items: cart.items }),
+      }
+    );
+
+    try {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData.url);
+
+      if (responseData.url) {
+        window.location.assign(responseData.url);
+      }
+    } catch (error) {
+      console.error("Error during checkout:", error.message);
+    }
   };
 
   return (
