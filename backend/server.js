@@ -1,13 +1,17 @@
 const express = require("express");
 const cors = require("cors");
-const { STRIPE_SECRET_KEY, FRONTEND_URL, PORT } = require("./config.js");
+const {
+  STRIPE_SECRET_KEY,
+  REACT_APP_FRONTEND_URL,
+  PORT,
+} = require("./config.js");
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
 
 const app = express();
 
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: REACT_APP_FRONTEND_URL,
   })
 );
 
@@ -21,8 +25,8 @@ app.post("/checkout", async (req, res) => {
     quantity: item.quantity,
   }));
 
-  const successURL = `${FRONTEND_URL}/success`;
-  const cancelURL = `${FRONTEND_URL}/cancel`;
+  const successURL = `${REACT_APP_FRONTEND_URL}/success`;
+  const cancelURL = `${REACT_APP_FRONTEND_URL}/cancel`;
 
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
