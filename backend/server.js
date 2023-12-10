@@ -1,9 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")(
-  "sk_test_51OJSkAA0k2whc0wWjIcrhaeQxhwbjT3CMf6EEbSuCga4WYBU4dzqVaWuT05wSzWJ1SUnGNe8mmPWuxfDRJKPuRJb00y4095H20"
-);
-const { FRONTEND_URL, PORT } = require("./config.js");
+const { STRIPE_SECRET_KEY, FRONTEND_URL, PORT } = require("./config.js");
+const stripe = require("stripe")(STRIPE_SECRET_KEY);
 
 const app = express();
 
