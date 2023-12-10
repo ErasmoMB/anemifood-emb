@@ -31,6 +31,11 @@ app.post("/checkout", async (req, res) => {
     cancel_url: cancelURL,
   });
 
+  app.get("/cancel", (req, res) => {
+    console.log("Request received on /cancel");
+    res.send("Cancelación exitosa");
+  });
+
   res.json({ url: session.url });
 });
 

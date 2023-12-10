@@ -13,6 +13,7 @@ import CartProvider from "./Cart";
 const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
 
 function App() {
+  console.log(window.location.pathname);
   return (
     <div>
       <CartProvider>
