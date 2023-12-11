@@ -1,0 +1,30 @@
+/* Estilos para enlaces y botones de navegación */
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 10px 30px;
+  color: #050505;
+  text-align: center;
+}
+
+/* Estilos para la marca del navbar */
+.navbar-brand img {
+  width: 200px;
+}
+
+.btn-dark img {
+  width: 25px;
+}
+
+.btn-dark .cantidad {
+  color: deepskyblue;
+}
+.modal-dialog {
+  color: black;
+}
+.success {
+  margin: 20px;
+  text-align: center;
+}
+.cancel {
+  margin: 20px;
+  text-align: center;
+}

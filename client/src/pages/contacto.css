@@ -1,0 +1,95 @@
+/* Sección de contacto */
+.contact_section {
+  background-repeat: no-repeat;
+  background-size: 400px; /* Puedes ajustar el tamaño según sea necesario */
+  background-position: right center; /* Puedes ajustar la posición según sea necesario */
+}
+
+.contact_section input {
+  border: none;
+  outline: none;
+  border-bottom: 0.8px solid #252525;
+  width: 90%;
+  margin: 10px 0;
+}
+
+.form-button {
+  display: grid;
+}
+
+.contact_form-container {
+  padding: 15px 0 15px 0;
+}
+
+.contact_form-container button {
+  border: none;
+  background-color: #272524;
+  color: #fff;
+  padding: 8px 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.frase {
+  color: yellow;
+  font-weight: bold;
+}
+
+.service_section {
+  color: black;
+}
+
+.custom_heading {
+  color: black;
+}
+.nutrientes {
+  border-radius: 8px;
+}
+.custom_dark-btn {
+  text-decoration: none;
+  width: 190px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tasty_section {
+  width: 100%;
+  height: 500px;
+  background-image: url(../assets/images/banner-contacto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.tasty_section h2 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+form {
+  line-height: 35px;
+  color: black;
+}
+form button {
+  margin-top: 20px;
+}
+.fruit_section {
+  margin-top: 30px;
+}
+.fruit_container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.fruit_container .layout_padding2 {
+  margin-bottom: 30px;
+  background-color: #300606bf;
+  border-radius: 20px;
+  padding: 50px;
+}

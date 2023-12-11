@@ -10,21 +10,24 @@ function CartProduct(props) {
 
   return (
     <div>
-      <h5 className="" style={{color: "purple"}}>
+      <h5 className="" style={{ color: "purple" }}>
         {productData.name}
       </h5>
-      <h6>
-        Quantity: {quantity}
-      </h6>
+      <h6>Cantidad: {quantity}</h6>
       <p>
-      {(quantity * productData.price).toFixed(2).toString().replace(".", ",").replace(/\,00/,'')}€
+        {(quantity * productData.price)
+          .toFixed(2)
+          .toString()
+          .replace(".", ",")
+          .replace(/\,00/, "")}
+        €
       </p>
       <button className="btn btn-warning" onClick={() => cart.deleteItem(id)}>
-        Remove from cart
+        Quitar del carrito
       </button>
       <hr />
     </div>
   );
 }
 
-export default CartProduct
+export default CartProduct;

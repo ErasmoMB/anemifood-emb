@@ -1,5 +1,6 @@
 import { Cart } from "../Cart";
 import { useContext } from "react";
+import "./product.css";
 
 function Product(props) {
   const { product } = props;
@@ -19,7 +20,7 @@ function Product(props) {
         {quantity > 0 ? (
           <div className="row">
             <div className="row m-auto">
-              <div className="col-6">In cart: {quantity}</div>
+              <div className="col-6">Cantidad: {quantity}</div>
               <div className="col-6">
                 <button
                   className="btn btn-primary mx-2"
@@ -40,7 +41,7 @@ function Product(props) {
                 className="btn btn-danger w-75 mt-4 m-auto"
                 onClick={() => cart.deleteItem(product.id)}
               >
-                Remove from cart
+                Quitar del carrito
               </button>
             </div>
           </div>
@@ -49,7 +50,7 @@ function Product(props) {
             className="btn btn-primary"
             onClick={() => cart.addItem(product.id)}
           >
-            Add to cart
+            Agregar al carrito
           </button>
         )}
       </div>

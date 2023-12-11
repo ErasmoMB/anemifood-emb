@@ -1,33 +1,38 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle";
-import Navbar from "./components/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import CartProvider from "./Cart";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Contacto from "./pages/Contacto";
+import LandbotComponent from "./components/LandbotComponent";
 
-// Accede a la variable de entorno REACT_APP_BACKEND_URL
 const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
 const successURL = `${process.env.REACT_APP_FRONTEND_URL}/success`;
 const cancelURL = `${process.env.REACT_APP_FRONTEND_URL}/cancel`;
+
 function App() {
   return (
-    <div>
-      <CartProvider>
-        {/* Pasa la variable de entorno a Navbar */}
-        <Navbar
-          backendURL={backendURL}
-          successURL={successURL}
-          cancelURL={cancelURL}
-        />
-        <div className="container">
-          <BrowserRouter>
+    <Router>
+      <div>
+        <CartProvider>
+          <Navbar
+            backendURL={backendURL}
+            successURL={successURL}
+            cancelURL={cancelURL}
+          />
+          <div className="container">
             <Routes>
-              {/* Pasa la variable de entorno a Store */}
-              <Route path="/" element={<Store backendURL={backendURL} />} />
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/productos"
+                element={<Store backendURL={backendURL} />}
+              />
               <Route
                 path="/success"
                 element={<Success successURL={successURL} />}
@@ -36,12 +41,14 @@ function App() {
                 path="/cancel"
                 element={<Cancel cancelURL={cancelURL} />}
               />
+              <Route path="/contacto" element={<Contacto />} />
             </Routes>
-          </BrowserRouter>
-        </div>
-      </CartProvider>
-    </div>
+          </div>
+          <LandbotComponent />
+          <Footer />
+        </CartProvider>
+      </div>
+    </Router>
   );
 }
-
 export default App;

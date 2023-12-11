@@ -1,0 +1,12 @@
+.store-container {
+  text-align: center;
+  margin-top: 30px;
+  color: #0a0301;
+}
+.store-container .title {
+  font-weight: bold;
+}
+.store-container .row {
+  display: flex;
+  flex-wrap: wrap;
+}

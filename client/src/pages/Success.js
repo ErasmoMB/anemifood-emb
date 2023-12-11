@@ -1,9 +1,9 @@
 function Success() {
   return (
-    <div>
-      <h1 className="mt-3">Thanks for your purchase!</h1>
+    <div className="success">
+      <h1 className="mt-3">Gracias por la compra!</h1>
       <a href="/" className="btn btn-success mt-2">
-        Back to home
+        Regresar
       </a>
     </div>
   );

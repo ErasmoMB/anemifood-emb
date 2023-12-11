@@ -1,0 +1,26 @@
+/* Sección de pie de página */
+.footer_section .container {
+  color: black;
+}
+.footer_section {
+  background-color: #a47474;
+  padding: 20px 0;
+}
+.container_fluid {
+  font-weight: 300;
+}
+.footer_section p {
+  text-align: center;
+}
+
+.footer_section a {
+  color: #191818;
+}
+.info_section {
+  padding: 30px;
+}
+.detalles {
+  font-weight: 100;
+}
+
+/* Fin de la sección de pie de página */
